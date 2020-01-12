@@ -1246,6 +1246,8 @@ This library started from the IBM V1.5 open-source code.
 
 - [`@tanupoo`](https://github.com/tanupoo) of the WIDE Project debugged AS923JP and LBT support.
 
+- Jose Catubigan Jr. added PH915 based on NTC Memorandum Circular No. 03-01-2013 assigning 915Mhz to 918Mhz as ISM band.
+
 ## Trademark Acknowledgements
 
 LoRa is a registered trademark of Semtech Corporation. LoRaWAN is a registered trademark of the LoRa Alliance.
