@@ -419,6 +419,56 @@ enum _dr_configured_t {
 };
 # endif // LMIC_DR_LEGACY
 
+#elif defined(CFG_ph915) // ==============================================
+
+#include "lorabase_ph915.h"
+
+// per 2.1.3: not implemented
+#define LMIC_ENABLE_TxParamSetupReq	0
+
+enum { DR_DFLTMIN = PH915_DR_SF7 };   // DR5
+                                      // DR_PAGE is a debugging parameter
+enum { DR_PAGE = DR_PAGE_PH915 };
+
+//enum { CHNL_PING         = 5 };
+enum { FREQ_PING = PH915_F6 };  // default ping freq
+enum { DR_PING = PH915_DR_SF9 };       // default ping DR
+                                       //enum { CHNL_DNW2         = 5 };
+enum { FREQ_DNW2 = PH915_F6 };
+enum { DR_DNW2 = PH915_DR_SF12 };
+enum { CHNL_BCN = 5 };
+enum { FREQ_BCN = PH915_F6 };
+enum { DR_BCN = PH915_DR_SF9 };
+enum { AIRTIME_BCN = 144384 };  // micros
+enum { LMIC_REGION_EIRP = PH915_LMIC_REGION_EIRP };         // region uses EIRP
+
+enum {
+        // Beacon frame format EU SF9
+        OFF_BCN_NETID = 0,
+        OFF_BCN_TIME = 3,
+        OFF_BCN_CRC1 = 7,
+        OFF_BCN_INFO = 8,
+        OFF_BCN_LAT = 9,
+        OFF_BCN_LON = 12,
+        OFF_BCN_CRC2 = 15,
+        LEN_BCN = 17
+};
+
+// for backwards compatibility. This must match _dr_ph915_t
+# if LMIC_DR_LEGACY
+enum _dr_configured_t {
+	DR_SF12 = PH915_DR_SF12,
+	DR_SF11 = PH915_DR_SF11,
+	DR_SF10 = PH915_DR_SF10,
+	DR_SF9  = PH915_DR_SF9,
+	DR_SF8  = PH915_DR_SF8,
+	DR_SF7  = PH915_DR_SF7,
+	DR_SF7B = PH915_DR_SF7B,
+	DR_FSK  = PH915_DR_FSK,
+	DR_NONE = PH915_DR_NONE
+};
+# endif // LMIC_DR_LEGACY
+
 #else
 # error Unsupported configuration setting
 #endif // ===================================================

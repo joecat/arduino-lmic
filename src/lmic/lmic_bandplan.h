@@ -45,6 +45,8 @@
 # include "lmic_bandplan_kr920.h"
 #elif defined(CFG_in866)
 # include "lmic_bandplan_in866.h"
+#elif defined(CFG_ph915)
+# include "lmic_bandplan_ph915.h"
 #else
 # error "CFG_... not properly set for bandplan"
 #endif

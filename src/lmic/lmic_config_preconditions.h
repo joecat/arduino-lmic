@@ -71,6 +71,7 @@ Revision history:
 #define LMIC_REGION_as923    7
 #define LMIC_REGION_kr920    8
 #define LMIC_REGION_in866    9
+#define LMIC_REGION_ph915    10
 
 // Some regions have country-specific overrides. For generality, we specify
 // country codes using the LMIC_COUNTY_CODE_C() macro These values are chosen
@@ -115,10 +116,11 @@ Revision history:
                                 (1 << LMIC_REGION_as923) |      \
                                 (1 << LMIC_REGION_kr920) |      \
                                 (1 << LMIC_REGION_in866) |      \
+                                (1 << LMIC_REGION_ph915) |      \
                                 0)
 
 //
-// Our input is a -D of one of CFG_eu868, CFG_us915, CFG_as923, CFG_au915, CFG_in866
+// Our input is a -D of one of CFG_eu868, CFG_us915, CFG_as923, CFG_au915, CFG_in866, CFG_ph915
 // More will be added in the the future. So at this point we create CFG_region with
 // following values. These are in order of the sections in the manual. Not all of the
 // below are supported yet.
@@ -139,6 +141,7 @@ Revision history:
                          (defined(CFG_as923) << LMIC_REGION_as923) | \
                          (defined(CFG_kr920) << LMIC_REGION_kr920) | \
                          (defined(CFG_in866) << LMIC_REGION_in866) | \
+                         (defined(CFG_ph915) << LMIC_REGION_ph915) | \
                          0)
 
 // the selected region.
@@ -166,6 +169,8 @@ Revision history:
 # define CFG_region     LMIC_REGION_kr920
 #elif defined(CFG_in866)
 # define CFG_region     LMIC_REGION_in866
+#elif defined(CFG_ph915)
+# define CFG_region     LMIC_REGION_ph915
 #else
 # define CFG_region     0
 #endif
@@ -185,6 +190,7 @@ Revision history:
                                 (1 << LMIC_REGION_as923) |      \
                                 (1 << LMIC_REGION_kr920) |      \
                                 (1 << LMIC_REGION_in866) |      \
+                                (1 << LMIC_REGION_ph915) |      \
                                 0)
 
 // a bitmask of` US-like regions -- these are regions with 64 fixed 125 kHz channels
@@ -203,6 +209,7 @@ Revision history:
                              /* (1 << LMIC_REGION_as923) | */   \
                              /* (1 << LMIC_REGION_kr920) | */   \
                              /* (1 << LMIC_REGION_in866) | */   \
+                             /* (1 << LMIC_REGION_ph915) | */   \
                                 0)
 
 //

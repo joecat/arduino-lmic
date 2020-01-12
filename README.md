@@ -46,7 +46,7 @@ requires C99 mode to be enabled by default.
 		- [Selecting V1.0.2](#selecting-v102)
 		- [Selecting V1.0.3](#selecting-v103)
 	- [Selecting the LoRaWAN Region Configuration](#selecting-the-lorawan-region-configuration)
-		- [eu868, as923, in866, kr920](#eu868-as923-in866-kr920)
+		- [eu868, as923, in866, kr920, ph915](#eu868-as923-in866-kr920-ph915)
 		- [us915, au915](#us915-au915)
 	- [Selecting the target radio transceiver](#selecting-the-target-radio-transceiver)
 	- [Controlling use of interrupts](#controlling-use-of-interrupts)
@@ -247,6 +247,7 @@ The library supports the following regions:
 `-D CFG_as923jp` | `LMIC_REGION_as923` and `LMIC_COUNTRY_CODE_JP` | 7 | 2.8 | Asia 923 MHz ISM with Japan listen-before-talk (LBT) rules
 `-D CFG_kr920` | `LMIC_REGION_kr920` | 8 | 2.9 | Korea 920-923 MHz ISM
 `-D CFG_in866` | `LMIC_REGION_in866` | 9 | 2.10 | India 865-867 MHz ISM
+`-D CFG_ph915` | `LMIC_REGION_ph915` | 10 | 2.11 | Philippines 915-918 MHz ISM
 
 The library requires that the compile environment or the project config file define exactly one of `CFG_...` variables. As released, `project_config/lmic_project_config.h` defines `CFG_us915`.  If you build with PlatformIO or other environments, and you do not provide a pointer to the platform config file, `src/lmic/config.h` will define `CFG_eu868`.
 
@@ -254,9 +255,9 @@ MCCI BSPs add menu entries to the Arduino IDE so you can select the target regio
 
 The library changes configuration pretty substantially according to the region selected, and this affects the symbols in-scope in your sketches and `.cpp` files. Some of the differences are listed below. This list is not comprehensive, and is subject to change in future major releases.
 
-#### eu868, as923, in866, kr920
+#### eu868, as923, in866, kr920, ph915
 
-If the library is configured for EU868, AS923, or IN866 operation, we make
+If the library is configured for EU868, AS923, KR920, IN866 or PH915  operation, we make
 the following changes:
 
 - Add the API `LMIC_setupBand()`.
