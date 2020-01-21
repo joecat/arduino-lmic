@@ -133,7 +133,7 @@ bit_t LMIC_setupBand(u1_t bandidx, s1_t txpow, u2_t txcap) {
 // this table is from highest to lowest
 static CONST_TABLE(u4_t, bandAssignments)[] = {
   918000000 /* .. and above */    | BAND_MILLI,
-  917700000 /* .. 917700000 */    | BAND_CENTI,
+  917700000 /* .. 918000000 */    | BAND_CENTI,
   917650000 /* .. 917700000 */    | BAND_MILLI,
   917400000 /* .. 917650000 */    | BAND_DECI,
   916600000 /* .. 916640000 */    | BAND_MILLI,

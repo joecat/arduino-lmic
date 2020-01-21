@@ -82,7 +82,7 @@ enum {
         PH915_FREQ_MAX = 918000000
 };
 enum {
-        PH915_TX_EIRP_MAX_DBM = 22      // 16 dBm EIRP. So subtract 3 dBm for a 3 dBi antenna.
+        PH915_TX_EIRP_MAX_DBM = 20      // 23 dBm EIRP. So subtract 3 dBm for a 3 dBi antenna.
 };
 
 enum { PH915_LMIC_REGION_EIRP = 1 };         // region uses EIRP
