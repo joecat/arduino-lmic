@@ -61,7 +61,7 @@ uint8_t LMICph915_maxFrameLen(uint8_t dr) {
 }
 
 static CONST_TABLE(s1_t, TXPOWLEVELS)[] = {
-        20, 18, 16, 14, 12, 10, 8, 6, 4, 2
+        22, 20, 18, 16, 14, 12, 10, 8, 6, 4
 };
 
 int8_t LMICph915_pow2dBm(uint8_t mcmd_ladr_p1) {
